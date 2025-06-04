@@ -1,0 +1,28 @@
+services:
+  todo-db:
+    image: postgres:11.5-alpine
+    ports:
+      - "5433:5432"
+    networks:
+      - app-net
+
+  todo-web:
+    image: dominikreussbzu/todolist
+    ports:
+      - "8030:80"
+    environment:
+      - Database:Provider=Postgres
+    depends_on:
+      - todo-db
+    networks:
+      - app-net
+    secrets:
+      - source: postgres-connection
+        target: /app/config/secrets.json
+
+networks:
+  app-net:
+
+secrets:
+  postgres-connection:
+    file: ./config/secrets.json
