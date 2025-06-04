@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emoji Rain Cursor</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #f0f0f0;
+    }
+    h1 {
+      font-size: 3rem;
+      color: #333;
+    }
+    p {
+      font-size: 1.2rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to My Emoji Rain Page 🌧️</h1>
+  <p>Move your cursor around to see the magic! ✨</p>
+
+  <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+  <script>
+    new cursoreffects.emojiCursor({
+      emoji: ["🦆", "🐧", "😊", "😂", "😍", "🙌", "😉"]
+    });
+  </script>
+
+</body>
+</html>
