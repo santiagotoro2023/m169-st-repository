@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONFIG_FILE="/etc/nginx/sites-available/reverse-proxy"
+CONFIG_FILE="/etc/nginx/sites-enabled/reverse-proxy"
 
 # Check prerequisites
 check_environment() {
