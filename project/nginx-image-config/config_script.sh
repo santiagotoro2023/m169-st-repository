@@ -5,7 +5,7 @@ CONFIG_FILE="/etc/nginx/sites-enabled/reverse-proxy"
 # Check prerequisites
 check_environment() {
     if [[ $EUID -ne 0 ]]; then
-        echo "⚠️ Please run this script as root."
+        echo "⚠️  Please run this script as root."
         exit 1
     fi
 
@@ -71,7 +71,7 @@ remove_domain() {
         d
     }" "$CONFIG_FILE"
 
-    echo "🗑️ Removed reverse proxy for $DOMAIN"
+    echo "🗑️  Removed reverse proxy for $DOMAIN"
 
     if nginx -t; then
         systemctl reload nginx
