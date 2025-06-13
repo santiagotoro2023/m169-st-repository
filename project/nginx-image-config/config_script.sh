@@ -48,7 +48,7 @@ EOF
     echo "✅ Added reverse proxy for $DOMAIN → $IP"
 
     if nginx -t; then
-        systemctl reload nginx
+        nginx -s reload
         echo "🔄 NGINX reloaded successfully."
     else
         echo "❌ NGINX config test failed. Please check manually."
@@ -74,7 +74,7 @@ remove_domain() {
     echo "🗑️  Removed reverse proxy for $DOMAIN"
 
     if nginx -t; then
-        systemctl reload nginx
+        nginx -s reload
         echo "🔄 NGINX reloaded successfully."
     else
         echo "❌ NGINX config test failed. Please check manually."
