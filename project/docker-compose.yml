@@ -13,6 +13,8 @@ services:
     restart: unless-stopped
     volumes:
       - grafana-storage:/var/lib/grafana
+      - ./grafana-config/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana-config/dashboards:/var/lib/grafana/dashboards:ro
 
   #Prometheus as Monitoring Data Source
   prometheus:
