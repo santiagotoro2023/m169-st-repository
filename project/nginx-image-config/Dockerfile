@@ -7,7 +7,6 @@ RUN apt-get update && \
 
 COPY ./nginx.conf /etc/nginx/nginx.conf
 COPY ./reverse-proxy /etc/nginx/sites-enabled/reverse-proxy
-COPY ./ssl /etc/nginx/ssl
 COPY ./config_script.sh /etc/nginx/config_script
 
 CMD ["nginx", "-g", "daemon off;"]
