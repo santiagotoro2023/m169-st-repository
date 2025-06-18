@@ -132,12 +132,40 @@ remove_domain() {
         exit 1
     fi
 
-    sed -i "/server_name $DOMAIN;/{
-        :a
-        N
-        /}/!ba
-        d
-    }" "$CONFIG_FILE"
+    # Use awk to process the file and remove server blocks containing the domain
+    awk -v domain="$DOMAIN" '
+    BEGIN { skip = 0; brace_level = 0 }
+    {
+        line = $0
+        if (match(line, /^[[:space:]]*server[[:space:]]*\{/)) {
+            in_server_block = 1
+            block = line "\n"
+            brace_level = 1
+            next
+        }
+
+        if (in_server_block) {
+            block = block line "\n"
+            brace_level += gsub(/\{/, "{", line)
+            brace_level -= gsub(/\}/, "}", line)
+
+            if (brace_level == 0) {
+                if (block ~ "server_name[[:space:]]+" domain ";") {
+                    # Skip this block
+                    in_server_block = 0
+                    block = ""
+                } else {
+                    # Keep this block
+                    printf "%s", block
+                    in_server_block = 0
+                    block = ""
+                }
+            }
+            next
+        }
+
+        print
+    }' "$CONFIG_FILE" > "${CONFIG_FILE}.tmp" && mv "${CONFIG_FILE}.tmp" "$CONFIG_FILE"
 
     echo "🗑️  Removed reverse proxy for $DOMAIN"
 
