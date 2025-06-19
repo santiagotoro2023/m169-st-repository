@@ -1,9 +1,9 @@
-#--⚠️  Dies ist der 'minimal' Branch! Hier ist NUR der NGINX-REVERSE-PROXY mit SCRIPT!  ⚠️ --
+# --⚠️  Dies ist der 'minimal' Branch! Hier ist NUR der NGINX-REVERSE-PROXY mit SCRIPT!  ⚠️ --
 
 # 🚀 M169 – Dokumentation zu Aufgaben & Projektarbeit
 
 Willkommen im **M169-Repository** von Santiago Toro! 🎓  
-Dieses Repository dokumentiert sämtliche **Aufgaben** sowie die **Projektarbeit** im Rahmen des Moduls **169 – Containerisierung** in meiner Ausbildung als **Informatiker Plattformentwickler EFZ**. 🧑‍💻🐳
+Dieses Repository dokumentiert die **Projektarbeit** im Rahmen des Moduls **169 – Containerisierung** in meiner Ausbildung als **Informatiker Plattformentwickler EFZ**. 🧑‍💻🐳
 
 ---
 
@@ -11,22 +11,8 @@ Dieses Repository dokumentiert sämtliche **Aufgaben** sowie die **Projektarbeit
 
 ```bash
 .
-├── exercises/     # 📘 Enthält alle Aufgaben aus dem Modul
 └── project/       # 🛠️ Projektarbeit zum Modulabschluss
 ```
-
----
-
-## 📘 exercises/ – Modulaufgaben
-
-In diesem Ordner befinden sich Unterordner zu den einzelnen Aufgaben, die während des Moduls bearbeitet wurden. Jede Aufgabe ist dokumentiert und mit relevanten Dateien versehen.
-
-👉 Themenbereiche:
-- Docker-Grundlagen 🐳
-- Container-Orchestrierung ⚙️
-- Docker Compose 📦
-- Netzwerk & Volumes 🌐
-- Images & Dockerfiles 🛠️
 
 ---
 
@@ -43,7 +29,6 @@ Diese Arbeit vereint das im Modul Gelernte in einem praxisnahen Containerisierun
 - Dokumentation 📝
 - Architekturübersicht 🏗️
 - Docker-Setups 🐳
-
 
 ---
 

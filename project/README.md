@@ -1,4 +1,4 @@
-#--⚠️  Dies ist der 'minimal' Branch! Hier ist NUR der NGINX-REVERSE-PROXY mit SCRIPT!  ⚠️ --
+# --⚠️  Dies ist der 'minimal' Branch! Hier ist NUR der NGINX-REVERSE-PROXY mit SCRIPT!  ⚠️ --
 
 # 📁 project/ – Reverse Proxy Monitoring Stack
 
