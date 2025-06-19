@@ -12,7 +12,6 @@ Die Übungen dienen dazu, grundlegende Konzepte, Werkzeuge und Best Practices im
 - Images, Container & Netzwerke ⚙️
 - Volumes & Persistenz 💾
 - Reverse Proxy Konfiguration 🌐
-- Monitoring (Prometheus & Grafana) 📊
 
 ...vor dem eigentlichen Projekt praktisch zu erproben und zu festigen.
 

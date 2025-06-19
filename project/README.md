@@ -1,7 +1,9 @@
+#--⚠️  Dies ist der 'minimal' Branch! Hier ist NUR der NGINX-REVERSE-PROXY mit SCRIPT!  ⚠️ --
+
 # 📁 project/ – Reverse Proxy Monitoring Stack
 
 Willkommen im `project/` Ordner! 🎉  
-Hier findest du alle Konfigurationsdateien, Skripte und Unterordner für den Betrieb eines Docker-basierten Reverse-Proxy-Stacks inklusive Monitoring mit Grafana & Prometheus.
+Hier findest du alle Konfigurationsdateien, Skripte und Unterordner für den Betrieb eines Docker-basierten Reverse-Proxy-Stacks.
 
 ---
 
@@ -23,34 +25,6 @@ Hier liegt alles rund um das custom NGINX-Image:
 
 ---
 
-### 📊 `grafana-config/`
-Konfiguriert den Grafana Container:
-
-- **`datasources/`** 🧩 – Verweist auf den Prometheus-Container als Datenquelle.
-- **`dashboards/`** 📈 – JSON-Dateien mit vordefinierten Monitoring-Dashboards.
-
-> 🗂 Wird beim Containerstart automatisch ins passende Verzeichnis gemountet.
-
----
-
-### 📜 `prometheus.yml`
-Konfiguriert den Prometheus-Container:
-
-- 📅 Legt das Abfrageintervall fest (z. B. alle 15 Sekunden)
-- 🎯 Definiert die zu überwachenden Targets:
-  - `proxy-node-exporter`
-  - `proxy-nginx-exporter`
-
-> 🔓 Achtung: In `nginx.conf` muss `/status` öffentlich erreichbar sein, damit Prometheus vom Exporter lesen kann.
-
----
-
-### 🐙 GitHub-Integration
-Alle Dateien im `project/`-Ordner sind versioniert im Repository:  
-🔗 [`https://github.com/santiagotoro2023/m169-st-repository`](https://github.com/santiagotoro2023/m169-st-repository)
-
----
-
 ## 🚀 Quickstart (TL;DR)
 1. `git clone https://github.com/santiagotoro2023/m169-st-repository`
 2. `cd project/`
@@ -60,4 +34,4 @@ Alle Dateien im `project/`-Ordner sind versioniert im Repository:
 
 ---
 
-Made with ❤️ by LK - LS - ST
+Made with ❤️ by Santiago Toro

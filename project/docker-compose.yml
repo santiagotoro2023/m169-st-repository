@@ -2,56 +2,6 @@
 
 services:
 
-  #Grafana for Monitoring WebGUI
-  grafana:
-    image: grafana/grafana:latest
-    container_name: proxy-grafana
-    ports:
-      - "3000:3000"
-    networks:
-      - monitor
-    restart: unless-stopped
-    volumes:
-      - grafana-storage:/var/lib/grafana
-      - ./grafana-config/provisioning:/etc/grafana/provisioning:ro
-      - ./grafana-config/dashboards:/var/lib/grafana/dashboards:ro
-
-  #Prometheus as Monitoring Data Source
-  prometheus:
-    image: prom/prometheus:latest
-    container_name: proxy-prometheus
-    ports:
-      - "9090:9090"
-    volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
-    networks:
-      - monitor
-    restart: unless-stopped
-
-  #Node Exporter as System Statistic Data Source
-  node-exporter:
-    image: prom/node-exporter:latest
-    container_name: proxy-node-exporter
-    ports:
-      - "9100:9100"
-    networks:
-      - monitor
-    restart: unless-stopped
-
-  #Nginx Exporter as NGINX stub_status Data Source
-  nginx-exporter:
-    image: nginx/nginx-prometheus-exporter:latest
-    container_name: proxy-nginx-exporter
-    command:
-      - '-nginx.scrape-uri=http://nginx-reverse-proxy/nginx_status'
-    depends_on:
-      - nginx-reverse-proxy
-    ports:
-      - "9113:9113"
-    networks:
-      - monitor
-    restart: unless-stopped
-
   #NGINX Reverse Proxy Service
   nginx-reverse-proxy:
     #Build from local Directory instead of Docker Hub Image
@@ -66,9 +16,6 @@ services:
     networks:
       - monitor
     restart: unless-stopped
-
-volumes:
-  grafana-storage:
 
 networks:
   monitor:

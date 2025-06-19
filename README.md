@@ -1,3 +1,5 @@
+#--⚠️  Dies ist der 'minimal' Branch! Hier ist NUR der NGINX-REVERSE-PROXY mit SCRIPT!  ⚠️ --
+
 # 🚀 M169 – Dokumentation zu Aufgaben & Projektarbeit
 
 Willkommen im **M169-Repository** von Santiago Toro! 🎓  
@@ -41,6 +43,7 @@ Diese Arbeit vereint das im Modul Gelernte in einem praxisnahen Containerisierun
 - Dokumentation 📝
 - Architekturübersicht 🏗️
 - Docker-Setups 🐳
+
 
 ---
 
